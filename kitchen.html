@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best kitchen</title>
+    <style>
+        body {
+            background-image: url('./images/kitchen.jpg');
+            background-size: cover;
+        }
+        button {
+            padding: 10px;
+            font-size: larger;
+            margin-top: 5px;
+        }
+        input {
+            padding: 10px;
+            margin-top: 5px;
+            font-size: large;
+        }
+        #burgers {
+            background-color: black;
+            color:white;
+            padding: 30px;
+            width: 300px;
+            border-radius: 10px;
+            margin-top:20px;
+            font-size: large;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+
+    <script>
+        function cookBurger_click() {
+
+            const bun = document.getElementById("bun").value;
+            const patty = document.getElementById("patty").value;
+            const cheese = document.getElementById("cheese").value;
+            const toppings = document.getElementById("toppings").value;
+
+            const burger =  makeBurger(bun, patty, cheese, toppings);
+            document.getElementById("burgers").innerText = burger;
+
+        }
+
+        function makeBurger(bun, patty, cheese, toppings) {
+            console.log('Starting to make a burger...');
+            console.log(`Take one ${bun} bun.`);
+            console.log(`Cook the ${patty} patty until it's well-done.`);
+            console.log(`Add a slice of ${cheese} cheese on top.`);
+            console.log(`Top with ${toppings} for extra flavor.`);
+            console.log('Place the cooked patty with cheese on the bun.');
+            console.log('Your burger is ready to be served!');
+
+            return `Here is your burger. Bun: ${bun}, patty:${patty}, cheese:${cheese}, toppings: ${toppings}`;
+        }
+    </script>
+
+</head>
+
+<body>
+    <form id="burgerForm">
+        <input type="text" id="bun" placeholder="Type of bun" required> <br>
+        <input type="text" id="patty" placeholder="Type of patty" required><br>
+        <input type="text" id="cheese" placeholder="Type of cheese" required><br>
+        <input type="text" id="toppings" placeholder="Toppings (comma separated)" required><br>
+        <button type="button" onclick="cookBurger_click()">Cook Burger</button>
+
+        <div id="burgers"> 
+
+        </div>
+
+    </form>
+</body>
+
+</html>
